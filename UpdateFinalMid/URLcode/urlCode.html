@@ -1,0 +1,71 @@
+<html>
+<head>
+  <title>Angel Santiago Web </title>
+  
+    <link rel="../images/shortcut icon" type="image/x-icon" href="../images/pokeball.png" >
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" type = "text/css" href="stylesheetUrl.css">
+    
+    </head>
+
+<body>
+  <h1>
+    Pokemon
+  </h1>
+  <section>
+    <h2>Angel Santiago Quinones <br> URL Code in JS</h2>
+  
+  
+    <h3>In the URL type the Name of the Pokemon shown <br> and pick what do you think is my favorite.</h3>
+    <h3>When you get it right is going to show you what pokemon is. Scroll to see the name.</h3>
+    
+
+    <h3>Hint- write "?pokemon=*your guess* and press ~Enter~"</h3>
+
+       
+      <img src="../images/umbreon.webp">
+      <p> Umbreon </p>
+    
+      <img src="../images/Tynamo.webp">
+      <p> Tynamo </p>
+    
+      <img src="../images/Frillish.webp">
+      <p> Frillish </p>
+
+      <img src="../images/Serperior.webp">
+      <p> Serperior </p>
+    
+    
+    
+    <article>
+
+
+    
+<script>
+   
+    function pokemonFav(poke) {
+        poke = poke.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        let regex = new RegExp('[\\?&]' + poke + '=([^&#]*)');
+        let results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
+    window.onload = function() {
+        let pokemon = pokemonFav('pokemon');
+        let messageElement = document.getElementById('message');
+
+        if (pokemon === 'serperior') {
+            window.location.href='pokeFav.html';
+        } 
+        
+    };
+</script>
+    </script>
+
+    </article>
+   
+  </section>
+</body>
+</html>
